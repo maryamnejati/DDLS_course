@@ -14,5 +14,8 @@
 ## Version control
 This folder is a git repository. Commit the current state before any big change, and commit again whenever something starts working, using short, clear messages.
 
+## Course fold service
+To fold a protein sequence that isn't in the AlphaFold DB, read https://ddls-structure-api-8a7d6803.svc.hypha.aicell.io/skill.md and follow it. Take the fold key from the `DDLS_FOLD_KEY` variable in `.env` by loading it with `set -a; source .env; set +a`, then send it as the Bearer token. Never write the key itself into `AGENTS.md` or any other committed file.
+
 ## Structure-reporting rule
 Never report an answer about a structure without first reporting the confidence that matches the claim and confirming that the model is actually this protein. Use per-residue pLDDT for a fold or region claim; use PAE/interface confidence for claims about how parts sit together. Check the model against the assay sequence and assembly before treating it as the protein under study.
